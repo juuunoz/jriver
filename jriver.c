@@ -27,3 +27,16 @@ struct file_operations jriver-fops = {
 	.release =  jriver-release,
 };
 
+int __init jriver-init(void)
+{
+	return 1;
+}
+
+void  __exit jriver-cleanup(void)
+{
+	return;
+}
+
+module_init(jriver-init);
+module_exit(jriver-cleanup);
+
