@@ -23,28 +23,28 @@
 #endif
 
 //device data structure
-struct chunkset 
+typedef struct chunk
 {
 	void **data;
-	struct chunkset *next;
-};
+	//struct chunkset *next;
+} chunk;
 
 //device informational structure
-struct jriver-device
+typedef struct jriver-device
 {
 	// data portion of struct
-	struct chunkset *data;
+	struct chunk *chunk;
 	
 	//organizational portion of struct
 	int chunksize;
-	int numchunks;
+	//int numchunks;
 	
 	struct cdev chardev;
 	
 	long size;
 	
 	
-};
+}jriver-device;
 
 int jriver-open(struct inode *inode, struct file *filp);
 int jriver-release(struct inode *inode, struct file *filp);
