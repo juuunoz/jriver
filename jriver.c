@@ -25,6 +25,7 @@ jriver-device *device;
 int jriver-open(struct inode *inode, struct file *filp)
 {
 	//if there were multiple devices, we would not use the existing global device variable, because there's no guarantee it would refer to the device that we want to open
+	//we would have to find it again using container_of() with the pointer being the cdev stored in inode->i_cdev
 	filp->private_data = device;
 	return 1;
 }
@@ -37,9 +38,28 @@ int jriver-release(struct inode *inode, struct file *filp)
 	return 0;
 }
 
-ssize_t jriver-read(struct file *filp, char __user *buf, size_t count, loff_t *f_pos);
+ssize_t jriver-read(struct file *filp, char __user *buf, size_t count, loff_t *f_pos)
+{
+	jriver-device *dev = filp->private_data;
+	chunk data = dev->data;
+	int size = dev->size;
+	
+	if (count > size)
+	{ 
+		//end of file
+		return 0;
+	} 
+	else if (*f_pos + count > dev->size) 
+	{ 
+		//reading more than there is to read
+		count = f_pos - dev->size;
+	}
+}
 
-ssize_t jriver-write(struct file *filp, const char __user *buf, size_t count, loff_t *f_pos);
+ssize_t jriver-write(struct file *filp, const char __user *buf, size_t count, loff_t *f_pos)
+{
+	
+}
 
 struct file_operations jriver-fops = 
 {
@@ -112,12 +132,11 @@ int __init jriver-init(void)
 	
 	cdev_init(&device->chardev, &jriver-fops)
 	device->chardev.owner = THIS_MODULE
-	//device->chardev.dev = devicenum;
-	//device->chardev.count = 0;
+
 	//why notice and not warning?
 	if (err = cdev_add(&device->chardev, devicenum, 1) < 0){ printk(KERN_NOTICE "error: %d, failed to add device\n", e)}
 	
-	device->size = sizeof(device);
+	device->size = 0;
 
 	return 1;
 }
