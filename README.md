@@ -1,11 +1,9 @@
 Juno's self-directed driver project with the endgoal of eventually supporting multiple custom gaming controllers on one computer to improve the local multiplayer videogame experience.
 
 resources used as of 2024/01/14: </br>
-general kernel module programming wisdom </br>
-* https://tldp.org/LDP/lkmpg/2.4/html/lkmpg.html#AEN34
+for general kernel module programming wisdom </br> https://tldp.org/LDP/lkmpg/2.4/html/lkmpg.html#AEN34
 
-less general driver module programming wisdom </br>
-* ttps://www.oreilly.com/library/view/linux-device-drivers/0596005903/ch03.html
+for less general driver module programming wisdom </br> https://www.oreilly.com/library/view/linux-device-drivers/0596005903/ch03.html
 
 To use; 
 1. run load-devices to load devices
