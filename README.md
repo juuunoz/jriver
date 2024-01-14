@@ -9,7 +9,7 @@ To use;
 1. run load-devices to load devices
 2. compile driver with make all
 3. insert into kernel with insmod jriver.ko
-4. run test ```<args>``` where arguments are the lines to be written and read into the device
+4. run ```test <args>``` where arguments are the lines to be written and read into the device
 
 To de-use;
 
