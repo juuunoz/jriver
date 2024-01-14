@@ -6,12 +6,13 @@ for less general driver module programming wisdom https://www.oreilly.com/librar
 
 To use;
 
-    run load-devices to load devices
-    compile driver with make all
-    insert into kernel with insmod jriver.ko
+1. run load-devices to load devices
+2. compile driver with make all
+3. insert into kernel with insmod jriver.ko
+4. run test '''<args>''' where arguments are the lines to be written and read into the device
 
 To de-use;
 
-    remove module from kernel with rmmod jriver.ko
-    run unload-devices to unload devices (or just run rm /dev/jriver-device)
+1. remove module from kernel with rmmod jriver.ko
+2. run unload-devices to unload devices (or just run rm /dev/jriver-device)
 
