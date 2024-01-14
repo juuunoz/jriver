@@ -1,4 +1,4 @@
-Juno's self-directed driver project with the endgoal of eventually supporting multiple custom gaming controllers on one computer to improve the local multiplayer videogame experience.
+Juno's self-directed driver project with the endgoal of eventually supporting multiple custom gaming controllers on one computer to improve the local multiplayer videogame experience on PC.
 
 resources used as of 2024/01/14: </br>
 for general kernel module programming wisdom https://tldp.org/LDP/lkmpg/2.4/html/lkmpg.html#AEN34 </br>
