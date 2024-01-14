@@ -2,32 +2,24 @@
 #define _JRIVER
 
 //define some constants
-#ifndef JRIVER-MAJORNUM
-#define JDRIVER-MAJORNUM 0  
+#ifndef JRIVER_MAJORNUM
+#define JDRIVER_MAJORNUM 0  
 #endif
 
-#ifndef JRIVER-NUMDEVS
-#define JRIVER-NUMDEVS 1
+#ifndef JRIVER_MINORNUM
+#define JDRIVER_MINORNUM 0  
 #endif
 
-#ifndef JRIVER-CHUNKSIZE
-#define JRIVER-CHUNKSIZE 4000
-#endif
-
-#ifndef JRIVER-CHUNKSETSIZE
-#define JRIVER-CHUNKSETSIZE 1000
-#endif
-
-#ifndef JDRIVER-BUFFERSIZE
-#define JDRIVER-BUFFERSIZE 4000
+#ifndef JDRIVER_BUFFERSIZE
+#define JDRIVER_BUFFERSIZE 4000
 #endif
 
 //device data structure
 typedef struct chunk
 {
-	void **data;
+	void *data;
 	//struct chunkset *next;
-} chunk;
+}chunk;
 
 //device informational structure
 typedef struct jriver-device
@@ -36,9 +28,6 @@ typedef struct jriver-device
 	struct chunk *chunk;
 	
 	//organizational portion of struct
-	int chunksize;
-	//int numchunks;
-	
 	struct cdev chardev;
 	
 	long size;
