@@ -2,7 +2,6 @@ Juno's self-directed driver project with the endgoal of eventually supporting mu
 
 resources used as of 2024/01/14: </br>
 for general kernel module programming wisdom https://tldp.org/LDP/lkmpg/2.4/html/lkmpg.html#AEN34
-
 for less general driver module programming wisdom https://www.oreilly.com/library/view/linux-device-drivers/0596005903/ch03.html
 
 To use;
