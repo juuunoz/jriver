@@ -4,6 +4,10 @@ resources used as of 2024/01/14: </br>
 for general kernel module programming wisdom https://tldp.org/LDP/lkmpg/2.4/html/lkmpg.html#AEN34 </br>
 for less general driver module programming wisdom https://www.oreilly.com/library/view/linux-device-drivers/0596005903/ch03.html
 
+Todo:
+1. further reading on pros and cons of device port types (usb-c, usb, bluetooth docks) required
+2. implement support for multiple device inputs, likely with semaphores and other fancy stuff
+
 To use;
 
 1. run load-devices to load devices
