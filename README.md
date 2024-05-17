@@ -1,7 +1,3 @@
-Juno's self-directed driver project with the endgoal of eventually supporting multiple custom gaming controllers on one computer to improve the local multiplayer videogame experience on PC.
-
-This is the driver part of the project. I am also currently looking into ways to manipulate an arduino kit into a prototype game controller
-
 resources used as of 2024/01/14: </br>
 for general kernel module programming wisdom https://tldp.org/LDP/lkmpg/2.4/html/lkmpg.html#AEN34</br>
 for less general driver module programming wisdom https://www.oreilly.com/library/view/linux-device-drivers/0596005903/ch03.html</br>
